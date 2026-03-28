@@ -62,6 +62,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/alioth/proprietary/vendor/etc/init/vendor.sensors.sscrpcd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.sensors.sscrpcd.rc \
     vendor/xiaomi/alioth/proprietary/vendor/etc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
     vendor/xiaomi/alioth/proprietary/vendor/etc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf \
+    vendor/xiaomi/alioth/proprietary/vendor/etc/ltm_config_xiaomi_38_08_0a_cmd_mode_dsc_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ltm_config_xiaomi_38_08_0a_cmd_mode_dsc_dsi_panel.xml \
     vendor/xiaomi/alioth/proprietary/vendor/etc/qdcm_calib_data_xiaomi_38_08_0a_cmd_mode_dsc_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_xiaomi_38_08_0a_cmd_mode_dsc_dsi_panel.xml \
     vendor/xiaomi/alioth/proprietary/vendor/etc/sensors/calibratedCheck.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/calibratedCheck.json \
     vendor/xiaomi/alioth/proprietary/vendor/etc/sensors/config/ak991x_dri_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/ak991x_dri_0.json \
@@ -424,41 +425,41 @@ PRODUCT_PACKAGES += \
     sensors.touch \
     vendor.qti.hardware.camera.postproc@1.0-service-impl \
     vendor.qti.hardware.sensorscalibrate@1.0 \
-    vendor_lib_rfsa_adsp_capi_v2_cirrus_sp_so \
-    vendor_lib_rfsa_adsp_capi_v2_dap_cpdp_so \
-    vendor_lib_rfsa_adsp_hrtf5c_bin \
-    vendor_lib_rfsa_adsp_libMIAIHDR_skel_so \
-    vendor_lib_rfsa_adsp_libQ6MSFR_manager_skel_so \
-    vendor_lib_rfsa_adsp_libSuperSensor_skel_so \
-    vendor_lib_rfsa_adsp_libapps_mem_heap_so \
-    vendor_lib_rfsa_adsp_libarcsoft_hdrplus_hvx_skel_so \
-    vendor_lib_rfsa_adsp_libbitml_nsp_skel_so \
-    vendor_lib_rfsa_adsp_libcalculator_domains_skel_so \
-    vendor_lib_rfsa_adsp_libcalculator_skel_so \
-    vendor_lib_rfsa_adsp_libcamera_nn_skel_so \
-    vendor_lib_rfsa_adsp_libcvpdsp_skel_so \
-    vendor_lib_rfsa_adsp_libdspCV_skel_so \
-    vendor_lib_rfsa_adsp_libdsp_streamer_binning_so \
-    vendor_lib_rfsa_adsp_libfastcvadsp_so \
-    vendor_lib_rfsa_adsp_libfastcvdsp_skel_so \
-    vendor_lib_rfsa_adsp_libfrc_mobilenet_so \
-    vendor_lib_rfsa_adsp_libhexagon_nn_skel_so \
-    vendor_lib_rfsa_adsp_libmialgo_rfs_cdsp_skel_so \
-    vendor_lib_rfsa_adsp_libmobilenet_dsp_so \
-    vendor_lib_rfsa_adsp_libremosaichvx_skel_so \
-    vendor_lib_rfsa_adsp_libscveObjectSegmentation_skel_so \
-    vendor_lib_rfsa_adsp_libscveT2T_skel_so \
-    vendor_lib_rfsa_adsp_libsnpe_dsp_domains_skel_so \
-    vendor_lib_rfsa_adsp_libsnpe_dsp_skel_so \
-    vendor_lib_rfsa_adsp_libsnpe_dsp_v65_domains_v2_skel_so \
-    vendor_lib_rfsa_adsp_libsnpe_dsp_v66_domains_v2_skel_so \
-    vendor_lib_rfsa_adsp_libsns_device_mode_skel_so \
-    vendor_lib_rfsa_adsp_libsns_low_lat_stream_skel_so \
-    vendor_lib_rfsa_adsp_misound_karaoke_res_bin \
-    vendor_lib_rfsa_adsp_misound_karaokemix_res_bin \
-    vendor_lib_rfsa_adsp_misound_res_bin \
-    vendor_lib_rfsa_adsp_misound_res_headphone_bin \
-    vendor_lib_rfsa_adsp_misound_res_spk_bin \
+    capi_v2_cirrus_sp \
+    capi_v2_dap_cpdp \
+    hrtf5c \
+    libMIAIHDR_skel \
+    libQ6MSFR_manager_skel \
+    libSuperSensor_skel \
+    libapps_mem_heap \
+    libarcsoft_hdrplus_hvx_skel \
+    libbitml_nsp_skel \
+    libcalculator_domains_skel \
+    libcalculator_skel \
+    libcamera_nn_skel \
+    libcvpdsp_skel \
+    libdspCV_skel \
+    libdsp_streamer_binning \
+    libfastcvadsp \
+    libfastcvdsp_skel \
+    libfrc_mobilenet \
+    libhexagon_nn_skel \
+    libmialgo_rfs_cdsp_skel \
+    libmobilenet_dsp \
+    libremosaichvx_skel \
+    libscveObjectSegmentation_skel \
+    libscveT2T_skel \
+    libsnpe_dsp_domains_skel \
+    libsnpe_dsp_skel \
+    libsnpe_dsp_v65_domains_v2_skel \
+    libsnpe_dsp_v66_domains_v2_skel \
+    libsns_device_mode_skel \
+    libsns_low_lat_stream_skel \
+    misound_karaoke_res \
+    misound_karaokemix_res \
+    misound_res \
+    misound_res_headphone \
+    misound_res_spk \
     HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND \
     HotwordEnrollmentXGoogleHEXAGON_WIDEBAND \
     com.android.hotwordenrollment.common.util \
@@ -467,5 +468,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.sensorscalibrate@1.0-service \
     init.qcom.sensors \
     init.qti.chg_policy \
+    nv_mac \
     sensors.qti \
     sscrpcd
