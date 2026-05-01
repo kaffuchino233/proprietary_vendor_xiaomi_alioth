@@ -4,11 +4,11 @@
 
 soong_namespace {
     imports: [
-        "hardware/qcom/display",
+        "hardware/qcom-caf/common/libqti-perfd-client",
+        "hardware/qcom-caf/sm8250",
         "vendor/qcom/common/vendor/adreno-r",
         "vendor/qcom/common/vendor/media/legacy",
-        "vendor/qcom/opensource/commonsys/display",
-        "vendor/qcom/opensource/commonsys-intf/display",
+        "vendor/qcom/opensource/display",
         "vendor/xiaomi/sm8250-common",
     ],
 }
@@ -256,24 +256,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libsn100u_fw",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib/libsn100u_fw.so",
-            ],
-        },
-    },
-    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }
@@ -6045,6 +6027,24 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libsn100u_fw",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsn100u_fw.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libsnpe_adsp",
     owner: "xiaomi",
     strip: {
@@ -7397,33 +7397,6 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
-    name: "hvdcp_opti",
-    owner: "xiaomi",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/hvdcp_opti",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
     name: "vendor.qti.hardware.sensorscalibrate@1.0-service",
     owner: "xiaomi",
     target: {
@@ -7459,14 +7432,6 @@ sh_binary {
     owner: "xiaomi",
     src: "proprietary/vendor/bin/init.qcom.sensors.sh",
     filename: "init.qcom.sensors.sh",
-    soc_specific: true,
-}
-
-sh_binary {
-    name: "init.qti.chg_policy",
-    owner: "xiaomi",
-    src: "proprietary/vendor/bin/init.qti.chg_policy.sh",
-    filename: "init.qti.chg_policy.sh",
     soc_specific: true,
 }
 
